@@ -1,4 +1,4 @@
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, ArrowUp } from "lucide-react";
 import { navigateLinks, socialLinks } from "../assets/data";
 
 const Footer = () => {
@@ -30,7 +30,7 @@ const Footer = () => {
           <button
             className="flex items-center gap-3 bg-white 
           text-zinc-900 px-6 py-3 rounded-full font-bold 
-          transition-transform hover:scale-105"
+          transition-transform hover:scale-105 mb-4"
           >
             Book a Call
             <div className="size-8 bg-zinc-900 rounded-full center-item">
@@ -76,9 +76,45 @@ const Footer = () => {
             </ul>
           </div>
           {/* SocialMedia */}
+          <div className="md:col-span-3 lg:">
+            <p
+              className="text-xs font-bold uppercase tracking-widest
+             text-zinc-500 mb-6"
+            >
+              Social Media
+            </p>
+            <ul className="flex flex-col gap-3">
+              {socialLinks.map((link) => (
+                <li key={link}>
+                  <a
+                    href="#"
+                    className="text-zinc-300 hover:text-white transition-colors"
+                  >
+                    {link}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
         {/* BOTTOM: BRANDING */}
-        <div className=""></div>
+        <div className="flex justify-between items-end mb-4">
+          <h1
+            className="text-7xl md:text-[10rem] font-bold
+            tracking-tight leading-none relative"
+          >
+            Boulevard <sup className="font-light text-5xl absolute">TM</sup>
+          </h1>
+          <button
+            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+            className="mb-4 size-12 rounded-full border border-zinc-700 
+          flex items-center justify-center hover:bg-zinc-800 transition-colors"
+          >
+            <span className="text-x1">
+              <ArrowUp className="size-5 cursor-pointer" />
+            </span>
+          </button>
+        </div>
       </div>
     </footer>
   );
